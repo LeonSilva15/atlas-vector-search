@@ -16,11 +16,13 @@ collection = None
 # Connect to the MongoDB client
 def connectToDB():
     global db, client, collection
+    
     # Set MongoDB client
     try:
         client = pymongo.MongoClient(os.getenv('MONGO_CLIENT'))
     except:
-        raise
+        raise ConnectionError('Unable to connect to database')
+    
     # Identify the database and collection
     db = client.sample_mflix
     collection = db.movies
