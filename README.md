@@ -40,6 +40,9 @@ MongoDB Atlas Vector Search is a feature integrated into MongoDB's cloud databas
 11. Go to [Hugging Face Tokens](https://huggingface.co/settings/tokens)
 12. Create an access token
 
+### Results example
+![Screenshot 2024-04-29 at 4 52 40 p m](https://github.com/LeonSilva15/atlas-vector-search/assets/36859776/2e5d48a6-cd36-4887-9f4c-bce240f9db54)
+
 ### References
 | Dependency | Official Website |
 |------------|------------------|
