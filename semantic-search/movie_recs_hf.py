@@ -14,12 +14,14 @@ client = None
 collection = None
 
 # Connect to the MongoDB client
-def connectToDB():
+def connect_to_db(mongoClient = None):
     global db, client, collection
+    # Use a received mongo client if existing
+    mongoClient = mongoClient or os.getenv('MONGO_CLIENT')
     
     # Set MongoDB client
     try:
-        client = pymongo.MongoClient(os.getenv('MONGO_CLIENT'))
+        client = pymongo.MongoClient(mongoClient)
     except:
         raise ConnectionError('Unable to connect to database')
     
@@ -28,10 +30,8 @@ def connectToDB():
     collection = db.movies
 
 # Get first items in the collection
-def firstItems(num = 5):
-    items = collection.find().limit( num )
-    for item in items:
-        print( item )
+def get_first_items(num = 5):
+    return collection.find().limit( num ) 
 
 # Generate plot vector embeddings
 def generate_embedding(text: str) -> list[float]:
@@ -47,8 +47,8 @@ def generate_embedding(text: str) -> list[float]:
     return response.json()
 
 # Embed the database collections plots
-def embedDataBaseRecords(maxRecords = None):
-    connectToDB()
+def embed_db_records(maxRecords = None):
+    connect_to_db()
     records = collection.find({
         'plot':{'$exists': True},
         'plot_embedding_hf':{'$exists': False}
@@ -61,7 +61,7 @@ def embedDataBaseRecords(maxRecords = None):
         collection.replace_one({'_id': doc['_id']}, doc)
 
 # Get the best results on the vector search
-def getSearchResults(query):
+def get_search_results(query):
     results = collection.aggregate([
         { '$vectorSearch': {
             'queryVector': generate_embedding(query),
@@ -75,28 +75,28 @@ def getSearchResults(query):
     return results
 
 # Print the vector search results
-def printResults(results):
+def print_results(results):
     for document in results:
         print(f"Movie Name: {document['title']},\nMovie Plot: {document['plot']}\n")
 
 # Get and print the vector search results
-def getVectorSearch(query):
-    results = getSearchResults(query)
-    printResults(results)
+def get_vector_search(query):
+    results = get_search_results(query)
+    print_results(results)
 
 # Connect to the Data base
 # Prompt for a plot to look for
 def main():
-    connectToDB()
+    connect_to_db()
 
     while(True):
         try:
             query = input('Enter a plot to look for or press "Ctrl + C" to exit\n')
-            getVectorSearch(query)
+            get_vector_search(query)
 
         except KeyboardInterrupt:
             break
 
 if __name__ == '__main__':
-    # embedDataBaseRecords()
+    # embed_db_records()
     main()
