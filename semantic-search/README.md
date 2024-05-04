@@ -34,6 +34,11 @@ Semantic search is an advanced method of searching that goes beyond simple keywo
 11. Go to [Hugging Face Tokens](https://huggingface.co/settings/tokens)
 12. Create an access token
 
+#### Example Results
+These results are limited due to the HuggingFace API limitations
+![hf results](https://github.com/LeonSilva15/atlas-vector-search/assets/36859776/626554fb-af5e-4d88-bab9-818ae8eb894e)
+
+
 ### Using OpenAI
 > movie_recs_oai.py
 8. Select `sample_mflix - embedded_movies`
@@ -57,3 +62,7 @@ Semantic search is an advanced method of searching that goes beyond simple keywo
 ```
 11. Go to [OpenAI](https://platform.openai.com/settings/profile?tab=api-keys)
 12. Create an access token
+
+#### Example Results
+These results are better, given the sample collection already has all the plots embedded by default using the OpenAI API
+![openai results](https://github.com/LeonSilva15/atlas-vector-search/assets/36859776/f3b4ae0d-7874-49e1-a23d-db943ec8abf0)
