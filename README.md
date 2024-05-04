@@ -10,6 +10,12 @@ Vector search, also known as similarity search or approximate nearest neighbor (
 ## MongoDB Atlas Vector Search
 MongoDB Atlas Vector Search is a feature integrated into MongoDB's cloud database service, Atlas, that enables users to perform efficient and scalable searches for similar documents based on vector embeddings. This feature allows for embedding-based searches directly within a MongoDB database, supporting applications such as recommendation systems, image retrieval, and natural language processing tasks directly within the database environment.
 
+## Semantic Search Example Results
+### With Hugging Face (Limited)
+![hf results](https://github.com/LeonSilva15/atlas-vector-search/assets/36859776/626554fb-af5e-4d88-bab9-818ae8eb894e)
+### With OpenAI
+![openai results](https://github.com/LeonSilva15/atlas-vector-search/assets/36859776/f3b4ae0d-7874-49e1-a23d-db943ec8abf0)
+
 ### References
 | Dependency | Official Website |
 |------------|------------------|
