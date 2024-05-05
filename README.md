@@ -17,7 +17,7 @@ MongoDB Atlas Vector Search is a feature integrated into MongoDB's cloud databas
 ![openai results](https://github.com/LeonSilva15/atlas-vector-search/assets/36859776/f3b4ae0d-7874-49e1-a23d-db943ec8abf0)
 
 ### References
-| Dependency | Official Website |
+| Reference | Official Website |
 |------------|------------------|
 | Beau's Video | https://youtu.be/JEBDfGqrAUA |
 | MongoDB Atlas | https://www.mongodb.com/atlas/database |
