@@ -18,6 +18,8 @@ Hallucinations undermine the reliability of LLMs, particularly in fields like jo
 ## RAG
 RAG, or Retrieval-Augmented Generation, is an advanced machine learning model that combines the power of information retrieval with the generative capabilities of language models to enhance the quality and factual accuracy of generated text. The model was developed to address some limitations of traditional language models, particularly issues related to factual accuracy and reliance on fixed training datasets.
 
+![medium image Heiko Hotz](https://github.com/LeonSilva15/atlas-vector-search/assets/36859776/5e9fd89a-9f9d-4801-86b9-fb772cf7f20d)(Image from [Heiko Hotz](https://towardsdatascience.com/rag-vs-finetuning-which-is-the-best-tool-to-boost-your-llm-application-94654b1eaba7))
+
 ### Model Architecture
 RAG utilizes a hybrid approach that integrates a retriever component with a generator component. The retriever is typically a dense vector search engine that fetches relevant context or documents from a large corpus based on the input query. This retrieved information is then passed to the generator, which is usually a transformer-based language model, to produce the final output. This architecture allows RAG to leverage external knowledge dynamically, enhancing its responses with up-to-date and contextually relevant information.
 
